@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "This app will just supply some quick lookup stuff for the spells, skills, and edges. The data will come from a BE GraphQL database.",
-  "homepage": "https://github.com/chip_l/SWADE_React#readme",
+  "homepage": "https://github.com/chip_l/SWADE#readme",
   "keywords": [
     "React",
     "GraphQL",
@@ -12,7 +12,7 @@
     "CodeGen"
   ],
   "license": "MIT",
-  "repository": "git@github.com:Chip-L/SWADE_React.git",
+  "repository": "git@github.com:Chip-L/SWADE.git",
   "author": "Chip Long",
   "workspaces": [
     "client/*",
