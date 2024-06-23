@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "GraphQL server for fetching SWADE information",
+  "main": "index.js",
+  "author": "Chip Long",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/index.js"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.10.4",
+    "graphql": "^16.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.8",
+    "typescript": "^5.5.2"
+  }
+}

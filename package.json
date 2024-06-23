@@ -15,8 +15,8 @@
   "repository": "git@github.com:Chip-L/SWADE.git",
   "author": "Chip Long",
   "workspaces": [
-    "client/*",
-    "server/*"
+    "client",
+    "gql_server"
   ],
   "browserslist": {
     "production": [
