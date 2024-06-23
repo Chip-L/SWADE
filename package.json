@@ -1,0 +1,33 @@
+{
+  "name": "swade_react",
+  "private": true,
+  "version": "0.0.0",
+  "description": "This app will just supply some quick lookup stuff for the spells, skills, and edges. The data will come from a BE GraphQL database.",
+  "homepage": "https://github.com/chip_l/SWADE_React#readme",
+  "keywords": [
+    "React",
+    "GraphQL",
+    "Savage Worlds",
+    "SWADE",
+    "CodeGen"
+  ],
+  "license": "MIT",
+  "repository": "git@github.com:Chip-L/SWADE_React.git",
+  "author": "Chip Long",
+  "workspaces": [
+    "client/*",
+    "server/*"
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
