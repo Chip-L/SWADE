@@ -11,13 +11,18 @@
     "build": "tsc -p tsconfig.prod.json",
     "prod": "node ./dist/server.js",
     "start": "yarn prod",
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "generate": "graphql-codegen"
   },
   "dependencies": {
     "@apollo/server": "^4.10.4",
-    "graphql": "^16.9.0"
+    "graphql": "^16.9.0",
+    "graphql-tag": "^2.12.6"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/typescript": "^4.0.7",
+    "@graphql-codegen/typescript-resolvers": "^4.1.0",
     "@types/node": "^20.14.8",
     "prettier": "^3.3.2",
     "tsx": "^4.15.7",
