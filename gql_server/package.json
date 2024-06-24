@@ -3,13 +3,15 @@
   "version": "0.0.0",
   "type": "module",
   "description": "GraphQL server for fetching SWADE information",
-  "main": "index.js",
+  "main": "src/server.js",
   "author": "Chip Long",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js"
+    "build": "tsc -p tsconfig.prod.json",
+    "prod": "node ./dist/server.js",
+    "start": "yarn prod",
+    "dev": "tsx watch src/server.ts"
   },
   "dependencies": {
     "@apollo/server": "^4.10.4",
@@ -17,6 +19,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.8",
+    "prettier": "^3.3.2",
+    "tsx": "^4.15.7",
     "typescript": "^5.5.2"
   }
 }

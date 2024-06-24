@@ -1,12 +1,23 @@
 {
   "compilerOptions": {
-    "rootDirs": ["src"],
-    "outDir": "dist",
     "lib": ["es2020"],
-    "target": "es2020",
     "module": "esnext",
     "moduleResolution": "node",
+    "target": "es2020",
+
+    "strict": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "rootDirs": ["src"],
+    "outDir": "build",
+    "sourceMap": true,
     "types": ["node"]
-  }
+  },
+  "include": ["src/**/*"]
 }

@@ -54,7 +54,7 @@
   {
     "modifierID": 6,
     "origModifierName": "Additional Zombies (+1)",
-    "description": "A larger horde can be raised in a single casting by paying an additional 1 Power Point for each extra zombie<i></i> raised.",
+    "description": "A larger horde can be raised in a single casting by paying an additional 1 Power Point for each extra zombie raised.",
     "modifierName": "Additional Zombies",
     "cost": 1,
     "takeMultiple": true,
