@@ -6,6 +6,7 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: 
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
+export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: { input: string; output: string; }
@@ -13,6 +14,24 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
+};
+
+export type EditPowerResponse = {
+  __typename?: 'EditPowerResponse';
+  code: Scalars['Int']['output'];
+  message: Scalars['String']['output'];
+  power?: Maybe<Power>;
+  success: Scalars['Boolean']['output'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  editPower?: Maybe<EditPowerResponse>;
+};
+
+
+export type MutationEditPowerArgs = {
+  id: Scalars['ID']['input'];
 };
 
 export type Power = {
@@ -123,8 +142,10 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
+  EditPowerResponse: ResolverTypeWrapper<EditPowerResponse>;
   ID: ResolverTypeWrapper<Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Scalars['Int']['output']>;
+  Mutation: ResolverTypeWrapper<{}>;
   Power: ResolverTypeWrapper<Power>;
   PowerModifier: ResolverTypeWrapper<PowerModifier>;
   Query: ResolverTypeWrapper<{}>;
@@ -134,12 +155,26 @@ export type ResolversTypes = {
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Boolean: Scalars['Boolean']['output'];
+  EditPowerResponse: EditPowerResponse;
   ID: Scalars['ID']['output'];
   Int: Scalars['Int']['output'];
+  Mutation: {};
   Power: Power;
   PowerModifier: PowerModifier;
   Query: {};
   String: Scalars['String']['output'];
+};
+
+export type EditPowerResponseResolvers<ContextType = any, ParentType extends ResolversParentTypes['EditPowerResponse'] = ResolversParentTypes['EditPowerResponse']> = {
+  code?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  power?: Resolver<Maybe<ResolversTypes['Power']>, ParentType, ContextType>;
+  success?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  editPower?: Resolver<Maybe<ResolversTypes['EditPowerResponse']>, ParentType, ContextType, RequireFields<MutationEditPowerArgs, 'id'>>;
 };
 
 export type PowerResolvers<ContextType = any, ParentType extends ResolversParentTypes['Power'] = ResolversParentTypes['Power']> = {
@@ -178,6 +213,8 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 };
 
 export type Resolvers<ContextType = any> = {
+  EditPowerResponse?: EditPowerResponseResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
   Power?: PowerResolvers<ContextType>;
   PowerModifier?: PowerModifierResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;

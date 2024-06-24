@@ -33,4 +33,15 @@ export const typeDefs = gql/* GraphQL */ `
   type Query {
     getPowerList: [Power]!
   }
+
+  type EditPowerResponse {
+    code: Int!
+    success: Boolean!
+    message: String!
+    power: Power
+  }
+
+  type Mutation {
+    editPower(id: ID!): EditPowerResponse
+  }
 `;
