@@ -1,4 +1,6 @@
-export const POWERS = [
+import { Power } from "../types";
+
+export const POWERS: Power[] = [
   {
     id: 1,
     power: "Arcane Protection",
@@ -64,7 +66,7 @@ export const POWERS = [
     alternateName: "",
     relatedPower: [],
     rank: "Novice",
-    powerPoints: "Special",
+    powerPoints: -1,
     range: "Smarts ",
     duration: "Minutes",
     durationMultiplier: 10,
@@ -540,7 +542,7 @@ export const POWERS = [
     alternateName: "Shrink/Growth",
     relatedPower: [],
     rank: "Seasoned",
-    powerPoints: "Special",
+    powerPoints: -1,
     range: "Smarts ",
     duration: "Rounds",
     durationMultiplier: 5,
@@ -748,7 +750,7 @@ export const POWERS = [
     rank: "Seasoned",
     powerPoints: 2,
     range: "Touch",
-    duration: "Special",
+    duration: -1,
     summary:
       "Reveals last five years of an object&apos;s history (100 years with a raise).",
     trappings: " Touching the object, glowing hands",
@@ -842,7 +844,7 @@ export const POWERS = [
     alternateName: "",
     relatedPower: [],
     rank: "Novice",
-    powerPoints: "Special",
+    powerPoints: -1,
     range: "Self ",
     duration: "Rounds",
     durationMultiplier: 5,
@@ -1015,7 +1017,7 @@ export const POWERS = [
     alternateName: "",
     relatedPower: [],
     rank: "Novice",
-    powerPoints: "Special",
+    powerPoints: -1,
     range: "Smarts ",
     duration: "Rounds",
     durationMultiplier: 5,

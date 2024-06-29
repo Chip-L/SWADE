@@ -1,4 +1,6 @@
-export const POWER_MODIFIERS = [
+import { PowerModifier } from "../types";
+
+export const POWER_MODIFIERS: PowerModifier[] = [
   {
     id: 1,
     modifierName: "Additional Recipients (+1)",
@@ -8,7 +10,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: true,
     isRequired: false,
-    relatedPowers: [11],
   },
   {
     id: 2,
@@ -19,9 +20,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: true,
     isRequired: false,
-    relatedPowers: [
-      1, 8, 9, 15, 16, 18, 25, 26, 36, 37, 41, 43, 49, 51, 52, 56, 57, 58,
-    ],
   },
   {
     id: 3,
@@ -32,7 +30,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: true,
     isRequired: false,
-    relatedPowers: [17],
   },
   {
     id: 4,
@@ -43,7 +40,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: true,
     isRequired: false,
-    relatedPowers: [28, 42],
   },
   {
     id: 5,
@@ -54,7 +50,6 @@ export const POWER_MODIFIERS = [
     cost: 3,
     takeMultiple: true,
     isRequired: false,
-    relatedPowers: [34],
   },
   {
     id: 6,
@@ -65,7 +60,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: true,
     isRequired: false,
-    relatedPowers: [59],
   },
   {
     id: 7,
@@ -76,7 +70,6 @@ export const POWER_MODIFIERS = [
     cost: 0,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [5],
   },
   {
     id: 8,
@@ -86,7 +79,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [30],
   },
   {
     id: 9,
@@ -97,7 +89,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [5],
   },
   {
     id: 10,
@@ -108,7 +99,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [11],
   },
   {
     id: 11,
@@ -119,7 +109,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [6, 12, 24, 27, 47, 48, 53],
   },
   {
     id: 12,
@@ -130,7 +119,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [11],
   },
   {
     id: 13,
@@ -141,7 +129,6 @@ export const POWER_MODIFIERS = [
     cost: 3,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [6, 12, 24, 27, 47, 48, 53],
   },
   {
     id: 14,
@@ -152,7 +139,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: true,
     isRequired: false,
-    relatedPowers: [59],
   },
   {
     id: 15,
@@ -163,7 +149,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: true,
     isRequired: false,
-    relatedPowers: [59],
   },
   {
     id: 16,
@@ -173,7 +158,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [40],
   },
   {
     id: 17,
@@ -184,7 +168,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: true,
     isRequired: true,
-    relatedPowers: [4],
   },
   {
     id: 18,
@@ -194,7 +177,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: true,
     isRequired: true,
-    relatedPowers: [4],
   },
   {
     id: 19,
@@ -204,7 +186,6 @@ export const POWER_MODIFIERS = [
     cost: 3,
     takeMultiple: true,
     isRequired: true,
-    relatedPowers: [4],
   },
   {
     id: 20,
@@ -214,7 +195,6 @@ export const POWER_MODIFIERS = [
     cost: 4,
     takeMultiple: true,
     isRequired: true,
-    relatedPowers: [4],
   },
   {
     id: 21,
@@ -225,7 +205,6 @@ export const POWER_MODIFIERS = [
     cost: 5,
     takeMultiple: true,
     isRequired: true,
-    relatedPowers: [4],
   },
   {
     id: 22,
@@ -235,7 +214,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [54],
   },
   {
     id: 23,
@@ -246,7 +224,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [31],
   },
   {
     id: 24,
@@ -257,7 +234,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [3],
   },
   {
     id: 25,
@@ -267,7 +243,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [5],
   },
   {
     id: 26,
@@ -277,7 +252,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [7],
   },
   {
     id: 27,
@@ -287,7 +261,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [10],
   },
   {
     id: 28,
@@ -297,7 +270,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [13],
   },
   {
     id: 29,
@@ -308,7 +280,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [39],
   },
   {
     id: 30,
@@ -318,7 +289,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [39],
   },
   {
     id: 31,
@@ -328,7 +298,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [54],
   },
   {
     id: 32,
@@ -339,17 +308,15 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [31],
   },
   {
     id: 33,
     modifierName: "Growth/Shrink-Increment 1 (+2)",
-    description: "Increase/Decresase size of target by 1",
+    description: "Increase/Decrease size of target by 1",
     shortModifierName: "Growth/Shrink-Increment 1",
     cost: 2,
     takeMultiple: true,
     isRequired: true,
-    relatedPowers: [29],
   },
   {
     id: 34,
@@ -359,7 +326,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [3],
   },
   {
     id: 35,
@@ -370,7 +336,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [4],
   },
   {
     id: 36,
@@ -381,7 +346,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [59],
   },
   {
     id: 37,
@@ -391,7 +355,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [54],
   },
   {
     id: 38,
@@ -402,7 +365,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [14, 35],
   },
   {
     id: 39,
@@ -413,7 +375,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [46, 50],
   },
   {
     id: 40,
@@ -423,7 +384,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [41],
   },
   {
     id: 41,
@@ -434,7 +394,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [31],
   },
   {
     id: 42,
@@ -445,7 +404,6 @@ export const POWER_MODIFIERS = [
     cost: 0,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [59],
   },
   {
     id: 43,
@@ -456,7 +414,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [19],
   },
   {
     id: 44,
@@ -467,7 +424,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [9],
   },
   {
     id: 45,
@@ -478,7 +434,6 @@ export const POWER_MODIFIERS = [
     cost: 5,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [44],
   },
   {
     id: 46,
@@ -489,7 +444,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [52],
   },
   {
     id: 47,
@@ -499,7 +453,6 @@ export const POWER_MODIFIERS = [
     cost: 3,
     takeMultiple: false,
     isRequired: true,
-    relatedPowers: [45],
   },
   {
     id: 48,
@@ -509,7 +462,6 @@ export const POWER_MODIFIERS = [
     cost: 5,
     takeMultiple: false,
     isRequired: true,
-    relatedPowers: [45],
   },
   {
     id: 49,
@@ -519,7 +471,6 @@ export const POWER_MODIFIERS = [
     cost: 8,
     takeMultiple: false,
     isRequired: true,
-    relatedPowers: [45],
   },
   {
     id: 50,
@@ -529,7 +480,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: true,
-    relatedPowers: [2],
   },
   {
     id: 51,
@@ -539,7 +489,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: true,
-    relatedPowers: [45],
   },
   {
     id: 52,
@@ -550,7 +499,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [3],
   },
   {
     id: 53,
@@ -560,7 +508,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [3],
   },
   {
     id: 54,
@@ -571,7 +518,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [18],
   },
   {
     id: 55,
@@ -582,7 +528,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [32],
   },
   {
     id: 56,
@@ -593,7 +538,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [45],
   },
   {
     id: 57,
@@ -604,7 +548,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [11],
   },
   {
     id: 58,
@@ -614,7 +557,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [30],
   },
   {
     id: 59,
@@ -624,7 +566,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [36, 47],
   },
   {
     id: 60,
@@ -634,7 +575,6 @@ export const POWER_MODIFIERS = [
     cost: 1,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [6],
   },
   {
     id: 61,
@@ -645,7 +585,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [32],
   },
   {
     id: 62,
@@ -656,7 +595,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [24],
   },
   {
     id: 63,
@@ -667,7 +605,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: true,
-    relatedPowers: [54],
   },
   {
     id: 64,
@@ -678,7 +615,6 @@ export const POWER_MODIFIERS = [
     cost: 4,
     takeMultiple: false,
     isRequired: true,
-    relatedPowers: [54],
   },
   {
     id: 65,
@@ -689,7 +625,6 @@ export const POWER_MODIFIERS = [
     cost: 6,
     takeMultiple: false,
     isRequired: true,
-    relatedPowers: [54],
   },
   {
     id: 66,
@@ -700,7 +635,6 @@ export const POWER_MODIFIERS = [
     cost: 8,
     takeMultiple: false,
     isRequired: true,
-    relatedPowers: [54],
   },
   {
     id: 67,
@@ -711,7 +645,6 @@ export const POWER_MODIFIERS = [
     cost: 0,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [46],
   },
   {
     id: 68,
@@ -722,7 +655,6 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [56],
   },
   {
     id: 69,
@@ -733,6 +665,5 @@ export const POWER_MODIFIERS = [
     cost: 2,
     takeMultiple: false,
     isRequired: false,
-    relatedPowers: [41],
   },
 ];
