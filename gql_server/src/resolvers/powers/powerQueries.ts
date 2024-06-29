@@ -1,8 +1,13 @@
 import { POWERS } from "../../database";
-import { QueryResolvers } from "../../types/__generates__/types";
 
-export const powerQuery: QueryResolvers = {
+export const powerQuery = {
   getPowerList: () => {
     return POWERS;
   },
 };
+
+// export const PowerModifier = {
+//   powerModifiers: ({ powerModifiersId }) => {
+//     return POWER_MODIFIERS.find((pm) => pm.id === powerModifiersId);
+//   },
+// };

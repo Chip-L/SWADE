@@ -1,47 +1,7 @@
-import { gql } from "graphql-tag";
+import { mergeTypeDefs } from "@graphql-tools/merge";
+import powersTypeDef from "./powers";
+import root from "./root";
 
-export const typeDefs = gql/* GraphQL */ `
-  type Power {
-    id: ID!
-    power: String!
-    alternateName: String
-    relatedPower: [ID]
-    rank: String
-    powerPoints: Int
-    range: String
-    duration: String
-    durationMultiplier: Int
-    summary: String
-    trappings: String
-    fullDescription: String
-    book: String
-    pageNumber: Int
-    isSpecial: Boolean
-    powerModifiers: [PowerModifier]
-  }
+const types = [root, powersTypeDef];
 
-  type PowerModifier {
-    id: ID!
-    modifierName: String
-    description: String
-    shortModifierName: String
-    cost: Int
-    takeMultiple: Boolean
-    isRequired: Boolean
-  }
-
-  type Query {
-    getPowerList: [Power]!
-  }
-
-  type EditPowerResponse {
-    code: Int!
-    success: Boolean!
-    message: String!
-    power: Power
-  }
-
-  type Mutation {
-    editPower(id: ID!): EditPowerResponse
-  }
-`;
+export const typeDefs = mergeTypeDefs(types);
