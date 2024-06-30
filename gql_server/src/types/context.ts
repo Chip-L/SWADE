@@ -1,4 +1,4 @@
-import { AirTableAPI } from "../dataSources/airTable-api";
+import { AirTableAPI } from "../dataSources";
 
 export type Context = {
   dataSources: {
