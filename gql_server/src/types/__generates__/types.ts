@@ -15,11 +15,6 @@ export type Scalars = {
   Float: { input: number; output: number; }
 };
 
-export type Mutation = {
-  __typename?: 'Mutation';
-  root?: Maybe<Scalars['String']['output']>;
-};
-
 export type Power = {
   __typename?: 'Power';
   alternateName?: Maybe<Scalars['String']['output']>;
@@ -78,7 +73,6 @@ export type PowerRecords = {
 export type Query = {
   __typename?: 'Query';
   getPowerList: PowerRecords;
-  root?: Maybe<Scalars['String']['output']>;
 };
 
 
@@ -155,7 +149,6 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
   ID: ResolverTypeWrapper<Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Scalars['Int']['output']>;
-  Mutation: ResolverTypeWrapper<{}>;
   Power: ResolverTypeWrapper<Power>;
   PowerModifier: ResolverTypeWrapper<PowerModifier>;
   PowerModifierRecord: ResolverTypeWrapper<PowerModifierRecord>;
@@ -171,7 +164,6 @@ export type ResolversParentTypes = {
   Boolean: Scalars['Boolean']['output'];
   ID: Scalars['ID']['output'];
   Int: Scalars['Int']['output'];
-  Mutation: {};
   Power: Power;
   PowerModifier: PowerModifier;
   PowerModifierRecord: PowerModifierRecord;
@@ -180,10 +172,6 @@ export type ResolversParentTypes = {
   PowerRecords: PowerRecords;
   Query: {};
   String: Scalars['String']['output'];
-};
-
-export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
-  root?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
 };
 
 export type PowerResolvers<ContextType = any, ParentType extends ResolversParentTypes['Power'] = ResolversParentTypes['Power']> = {
@@ -243,11 +231,9 @@ export type PowerRecordsResolvers<ContextType = any, ParentType extends Resolver
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   getPowerList?: Resolver<ResolversTypes['PowerRecords'], ParentType, ContextType>;
-  root?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
 };
 
 export type Resolvers<ContextType = any> = {
-  Mutation?: MutationResolvers<ContextType>;
   Power?: PowerResolvers<ContextType>;
   PowerModifier?: PowerModifierResolvers<ContextType>;
   PowerModifierRecord?: PowerModifierRecordResolvers<ContextType>;

@@ -1,5 +1,5 @@
 import { Resolvers } from "../types/__generates__/types";
-import { powerMutation, powerQuery } from "./powers";
+import { powerQuery } from "./powers";
 
 export const resolvers: Resolvers = {
   Query: { ...powerQuery.Query },

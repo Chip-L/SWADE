@@ -47,7 +47,7 @@ export const powersTypeDef = gql/* GraphQL */ `
     isRequired: Boolean
   }
 
-  extend type Query {
+  type Query {
     getPowerList: PowerRecords!
   }
 
