@@ -1,4 +1,6 @@
 import { AugmentedRequest, RESTDataSource } from "@apollo/datasource-rest";
+import { PowerRecord, PowerRecords } from "../types";
+// import { PowerRecordModel, PowerRecordsModel } from "../types/powerModels";
 
 export class AirTableAPI extends RESTDataSource {
   override baseURL = "https://api.airtable.com/v0/apppqY4AVymi8uA8E/";
@@ -9,11 +11,11 @@ export class AirTableAPI extends RESTDataSource {
   }
 
   getPowersList() {
-    return this.get(`Powers`);
+    return this.get<PowerRecords>(`Powers`);
   }
 
   getPower(id: string) {
-    return this.get(`Powers/${id}`);
+    return this.get<PowerRecord>(`Powers/${id}`);
   }
 
   getPowerModifiersList() {

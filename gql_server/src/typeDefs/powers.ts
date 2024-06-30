@@ -13,7 +13,7 @@ export const powersTypeDef = gql/* GraphQL */ `
     power_id: Int
     power: String
     alternateName: String
-    relatedPower: [ID]
+    relatedPower: [PowerRecord]
     rank: String
     powerPoints: String
     range: String
@@ -26,7 +26,7 @@ export const powersTypeDef = gql/* GraphQL */ `
     book: String
     pageNumber: Int
     isSpecial: Boolean
-    # powerModifiers: [PowerModifierRecord]
+    powerModifiers: [PowerModifierRecord]
   }
 
   type PowerModifierRecords {
