@@ -15,6 +15,7 @@
     "generate": "graphql-codegen"
   },
   "dependencies": {
+    "@apollo/datasource-rest": "^6.3.0",
     "@apollo/server": "^4.10.4",
     "@graphql-tools/merge": "^9.0.4",
     "graphql": "^16.9.0",
