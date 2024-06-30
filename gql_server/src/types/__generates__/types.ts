@@ -35,9 +35,32 @@ export type Power = {
   range?: Maybe<Scalars['String']['output']>;
   rangeMultiplier?: Maybe<Scalars['Int']['output']>;
   rank?: Maybe<Scalars['String']['output']>;
-  relatedPower?: Maybe<Array<Maybe<Scalars['Int']['output']>>>;
+  relatedPower?: Maybe<Array<Maybe<Scalars['ID']['output']>>>;
   summary?: Maybe<Scalars['String']['output']>;
   trappings?: Maybe<Scalars['String']['output']>;
+};
+
+export type PowerModifier = {
+  __typename?: 'PowerModifier';
+  cost?: Maybe<Scalars['Int']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['Int']['output'];
+  isRequired?: Maybe<Scalars['Boolean']['output']>;
+  modifierName?: Maybe<Scalars['String']['output']>;
+  shortModifierName?: Maybe<Scalars['String']['output']>;
+  takeMultiple?: Maybe<Scalars['Boolean']['output']>;
+};
+
+export type PowerModifierRecord = {
+  __typename?: 'PowerModifierRecord';
+  createdTime?: Maybe<Scalars['String']['output']>;
+  fields?: Maybe<PowerModifier>;
+  id: Scalars['ID']['output'];
+};
+
+export type PowerModifierRecords = {
+  __typename?: 'PowerModifierRecords';
+  records?: Maybe<Array<Maybe<PowerModifierRecord>>>;
 };
 
 export type PowerRecord = {
@@ -54,6 +77,7 @@ export type PowerRecords = {
 
 export type Query = {
   __typename?: 'Query';
+  getPowerList: PowerRecords;
   root?: Maybe<Scalars['String']['output']>;
 };
 
@@ -133,6 +157,9 @@ export type ResolversTypes = {
   Int: ResolverTypeWrapper<Scalars['Int']['output']>;
   Mutation: ResolverTypeWrapper<{}>;
   Power: ResolverTypeWrapper<Power>;
+  PowerModifier: ResolverTypeWrapper<PowerModifier>;
+  PowerModifierRecord: ResolverTypeWrapper<PowerModifierRecord>;
+  PowerModifierRecords: ResolverTypeWrapper<PowerModifierRecords>;
   PowerRecord: ResolverTypeWrapper<PowerRecord>;
   PowerRecords: ResolverTypeWrapper<PowerRecords>;
   Query: ResolverTypeWrapper<{}>;
@@ -146,6 +173,9 @@ export type ResolversParentTypes = {
   Int: Scalars['Int']['output'];
   Mutation: {};
   Power: Power;
+  PowerModifier: PowerModifier;
+  PowerModifierRecord: PowerModifierRecord;
+  PowerModifierRecords: PowerModifierRecords;
   PowerRecord: PowerRecord;
   PowerRecords: PowerRecords;
   Query: {};
@@ -170,9 +200,32 @@ export type PowerResolvers<ContextType = any, ParentType extends ResolversParent
   range?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   rangeMultiplier?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   rank?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  relatedPower?: Resolver<Maybe<Array<Maybe<ResolversTypes['Int']>>>, ParentType, ContextType>;
+  relatedPower?: Resolver<Maybe<Array<Maybe<ResolversTypes['ID']>>>, ParentType, ContextType>;
   summary?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   trappings?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type PowerModifierResolvers<ContextType = any, ParentType extends ResolversParentTypes['PowerModifier'] = ResolversParentTypes['PowerModifier']> = {
+  cost?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  isRequired?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  modifierName?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  shortModifierName?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  takeMultiple?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type PowerModifierRecordResolvers<ContextType = any, ParentType extends ResolversParentTypes['PowerModifierRecord'] = ResolversParentTypes['PowerModifierRecord']> = {
+  createdTime?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  fields?: Resolver<Maybe<ResolversTypes['PowerModifier']>, ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type PowerModifierRecordsResolvers<ContextType = any, ParentType extends ResolversParentTypes['PowerModifierRecords'] = ResolversParentTypes['PowerModifierRecords']> = {
+  records?: Resolver<Maybe<Array<Maybe<ResolversTypes['PowerModifierRecord']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -189,12 +242,16 @@ export type PowerRecordsResolvers<ContextType = any, ParentType extends Resolver
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  getPowerList?: Resolver<ResolversTypes['PowerRecords'], ParentType, ContextType>;
   root?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
 };
 
 export type Resolvers<ContextType = any> = {
   Mutation?: MutationResolvers<ContextType>;
   Power?: PowerResolvers<ContextType>;
+  PowerModifier?: PowerModifierResolvers<ContextType>;
+  PowerModifierRecord?: PowerModifierRecordResolvers<ContextType>;
+  PowerModifierRecords?: PowerModifierRecordsResolvers<ContextType>;
   PowerRecord?: PowerRecordResolvers<ContextType>;
   PowerRecords?: PowerRecordsResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
