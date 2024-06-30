@@ -1,13 +1,21 @@
 import { gql } from "graphql-tag";
 
 export const powersTypeDef = gql/* GraphQL */ `
+  type PowerRecords {
+    records: [PowerRecord]
+  }
+  type PowerRecord {
+    id: ID!
+    createdTime: String
+    fields: Power
+  }
   type Power {
-    id: Int!
-    power: String!
+    power_id: Int
+    power: String
     alternateName: String
-    relatedPower: [Int]
+    relatedPower: [ID]
     rank: String
-    powerPoints: Int
+    powerPoints: String
     range: String
     rangeMultiplier: Int
     duration: String
@@ -18,9 +26,17 @@ export const powersTypeDef = gql/* GraphQL */ `
     book: String
     pageNumber: Int
     isSpecial: Boolean
-    powerModifiers: [PowerModifier]
+    # powerModifiers: [PowerModifierRecord]
   }
 
+  type PowerModifierRecords {
+    records: [PowerModifierRecord]
+  }
+  type PowerModifierRecord {
+    id: ID!
+    createdTime: String
+    fields: PowerModifier
+  }
   type PowerModifier {
     id: Int!
     modifierName: String
@@ -32,19 +48,19 @@ export const powersTypeDef = gql/* GraphQL */ `
   }
 
   extend type Query {
-    getPowerList: [Power]!
+    getPowerList: PowerRecords!
   }
 
-  type EditPowerResponse {
-    code: Int!
-    success: Boolean!
-    message: String!
-    power: Power
-  }
+  # type EditPowerResponse {
+  #   code: Int!
+  #   success: Boolean!
+  #   message: String!
+  #   power: Power
+  # }
 
-  extend type Mutation {
-    editPower(id: Int!): EditPowerResponse
-  }
+  # extend type Mutation {
+  #   editPower(id: Int!): EditPowerResponse
+  # }
 `;
 
 export default powersTypeDef;

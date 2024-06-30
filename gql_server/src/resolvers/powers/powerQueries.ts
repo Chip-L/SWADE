@@ -1,13 +1,16 @@
-import { POWERS } from "../../database";
-
 export const powerQuery = {
-  getPowerList: () => {
-    return POWERS;
-  },
-};
+  Query: {
+    getPowerList: async (_, __, { dataSources }) => {
+      const data = await dataSources.airTableAPI.getPowersList();
 
-// export const PowerModifier = {
-//   powerModifiers: ({ powerModifiersId }) => {
-//     return POWER_MODIFIERS.find((pm) => pm.id === powerModifiersId);
-//   },
-// };
+      console.log(data);
+      return data;
+    },
+  },
+
+  // Powers: {
+  //   powerModifiers: ({ powerId }, _, { dataSources }) => {
+  //     return dataSources.airTableAPI.getPower(powerId);
+  //   },
+  // },
+};

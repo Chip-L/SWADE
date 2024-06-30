@@ -8,7 +8,7 @@ export class AirTableAPI extends RESTDataSource {
       "Bearer patopbsuuXqmsuaVx.855037b6bc31a3325f7836eb7127d1cfe1c9895ed8d8fdd8d9ae90871429dd5c";
   }
 
-  getPowers() {
+  getPowersList() {
     return this.get(`Powers`);
   }
 
@@ -16,7 +16,7 @@ export class AirTableAPI extends RESTDataSource {
     return this.get(`Powers/${id}`);
   }
 
-  getPowerModifiers() {
+  getPowerModifiersList() {
     //  const params = new URLSearchParams({
     //     maxRecords: String(maxRecords)
     //   });
