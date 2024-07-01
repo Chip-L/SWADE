@@ -1,5 +1,4 @@
 import { GraphQLResolveInfo } from 'graphql';
-import { PowerRecordsModel, PowerRecordModel, PowerModel } from '../powerModels';
 import { Context } from '../context';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -152,12 +151,12 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
   ID: ResolverTypeWrapper<Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Scalars['Int']['output']>;
-  Power: ResolverTypeWrapper<PowerModel>;
+  Power: ResolverTypeWrapper<Power>;
   PowerModifier: ResolverTypeWrapper<PowerModifier>;
   PowerModifierRecord: ResolverTypeWrapper<PowerModifierRecord>;
   PowerModifierRecords: ResolverTypeWrapper<PowerModifierRecords>;
-  PowerRecord: ResolverTypeWrapper<PowerRecordModel>;
-  PowerRecords: ResolverTypeWrapper<PowerRecordsModel>;
+  PowerRecord: ResolverTypeWrapper<PowerRecord>;
+  PowerRecords: ResolverTypeWrapper<PowerRecords>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']['output']>;
 };
@@ -167,12 +166,12 @@ export type ResolversParentTypes = {
   Boolean: Scalars['Boolean']['output'];
   ID: Scalars['ID']['output'];
   Int: Scalars['Int']['output'];
-  Power: PowerModel;
+  Power: Power;
   PowerModifier: PowerModifier;
   PowerModifierRecord: PowerModifierRecord;
   PowerModifierRecords: PowerModifierRecords;
-  PowerRecord: PowerRecordModel;
-  PowerRecords: PowerRecordsModel;
+  PowerRecord: PowerRecord;
+  PowerRecords: PowerRecords;
   Query: {};
   String: Scalars['String']['output'];
 };

@@ -8,9 +8,9 @@ const config: CodegenConfig = {
       config: {
         contextType: "../context#Context",
         mappers: {
-          PowerRecords: "../powerModels#PowerRecordsModel",
-          PowerRecord: "../powerModels#PowerRecordModel",
-          Power: "../powerModels#PowerModel",
+          // PowerRecords: "../powerModels#PowerRecordsModel",
+          // PowerRecord: "../powerModels#PowerRecordModel",
+          // Power: "../powerModels#PowerModel",
         },
       },
     },

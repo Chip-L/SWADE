@@ -8,4 +8,26 @@ export const powerQuery: Resolvers = {
       return data;
     },
   },
+
+  PowerRecord: {
+    fields: (parent) => {
+      return parent.fields ?? {};
+    },
+  },
+
+  Power: {
+    relatedPower: async ({ relatedPower }, _, { dataSources }) => {
+      const powerList = [];
+
+      if (relatedPower && relatedPower.length > 0) {
+        for (const power of relatedPower) {
+          if (power) {
+            const data = await dataSources.airTableAPI.getPower(power.id);
+            powerList.push(data);
+          }
+        }
+      }
+      return powerList;
+    },
+  },
 };
